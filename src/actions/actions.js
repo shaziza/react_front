@@ -57,13 +57,11 @@ export function getPost(id, post_id) {
 		request(url)
 		.then(d => {
 			const data = d.data;
-			console.log(data);
 			if (data.length > 0) {
 				const post = new schema.Entity('posts');
 				let list = new schema.Array( post );
 				const normalizedData = normalize(data, list);
 				const item = normalizedData.entities.posts[post_id];
-				console.log(item);
 				dispatch(setInDatabaseByPath(item, keys_path));
 			}
 		})

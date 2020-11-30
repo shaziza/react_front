@@ -4,7 +4,6 @@ export const getPathFromObjectByArray = (obj, path) => {
 	return result ? result[key] : result;
 }
 export const getPathFromObject = (obj, path, defaultValue) => {
-	console.log(obj, path, defaultValue);
 	let keys = path.split('.');
 	let result = getPathFromObjectByArray(obj, keys);
 	return result === undefined ? defaultValue : result;

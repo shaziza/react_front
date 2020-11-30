@@ -3,7 +3,6 @@ import React from 'react'
 
 const Comments = ({items}) => {
 	const nested_comment = items.filter((i) => i.id === 9);
-	console.log(nested_comment);
 	const style = {marginLeft: '8px'}
 	return (
 		<div className='comments-container'>

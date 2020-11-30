@@ -13,7 +13,6 @@ const databaseReducer = (state = {
 	[USERS_KEY]: {}
 }, action) => {
 	let new_state = {...state};
-	console.log(action);
     switch(action.type) {
 		case SET_IN_DATABASE_BY_PATH:
 			return Object.assign({}, state, assignToPathFromObjectToValue(new_state, action.path, action.data));
