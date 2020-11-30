@@ -1,16 +1,14 @@
-export function request(url) {
-    console.log('5656');
-    fetch(url).then((response) => {
-            console.log(response.json());
-            return (
-                response.json()
-            );
-        });
-    // fetch(url)
-    // .then(response => () => {
-    //     console.log(response.json());
-    //     return (
-    //         response.json()
-    //     );
-    // });
+
+/**
+ * @param {String} url
+ * Делает запрос с помощью fetch
+ * @param {String} [method='get']
+ */
+
+export function request(url, method = 'GET') {
+	return fetch(url).then(response => {
+		return response.json();
+	}).catch(error => {
+		return Promise.reject(error);
+	});
 }

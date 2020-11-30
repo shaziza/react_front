@@ -1,22 +1,22 @@
 // import initialState from './initialState';
 import {
-	APPEND_IN_DATABASE_BY_PATH
+	SET_IN_DATABASE_BY_PATH,
 } from '../actions/actionsTypes';
 import {
-	appendToPathFromObjectToValue
+	assignToPathFromObjectToValue
 } from "../helpers";
 import {
-	USERS_KEY,
+	USERS_KEY
 } from '../actions/keys';
 
-const databaseReducer = (state={
+const databaseReducer = (state = {
 	[USERS_KEY]: {}
 }, action) => {
 	let new_state = {...state};
 	console.log(action);
     switch(action.type) {
-			case APPEND_IN_DATABASE_BY_PATH:
-			return Object.assign({}, state, appendToPathFromObjectToValue(new_state, action.path, action.data, action.options));
+		case SET_IN_DATABASE_BY_PATH:
+			return Object.assign({}, state, assignToPathFromObjectToValue(new_state, action.path, action.data));
 		default: return state;
 	}
 }

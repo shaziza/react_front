@@ -3,15 +3,12 @@ export const getPathFromObjectByArray = (obj, path) => {
 	let result = path.length !== 0 ? getPathFromObjectByArray(obj, path) : obj;
 	return result ? result[key] : result;
 }
-
 export const getPathFromObject = (obj, path, defaultValue) => {
 	console.log(obj, path, defaultValue);
 	let keys = path.split('.');
 	let result = getPathFromObjectByArray(obj, keys);
 	return result === undefined ? defaultValue : result;
 }
-export const appendToPathFromObjectToValue = (obj, path, value, options) => assignToPathFromObjectToValue(obj, path, value, appendInArray, options);
-
 export const assignToPathFromObjectToValue = (obj, path, value, action, options) => {
 	let keys = path.split('.');
 	return findPathAndAssign(obj, keys, value, action, options);
@@ -25,19 +22,16 @@ export const findPathAndAssign = (obj, keys, value, action, options) => {
 	return Object.assign(obj, {[key]: findPathAndAssign(curr, keys, value, action, options)});
 }
 export const appendInArray = (arr, value, {deep_level = 0} = {}) => {
-	console.log(arr, value);
-	// if (Array.isArray(value)) return [...arr, ...value];
+	if (Array.isArray(value)) return [...arr, ...value];
 	if (typeof(value) === 'object') return appendInObject(arr, value, {deep_level});
 	return Array.isArray(arr) ? [...arr, value] : (value);
 };
 export const appendInObject = (obj, value, {deep_level} = {}) => {
-	console.log(obj, value);
 	if (deep_level > 0) {
 		let result = Object.assign({}, obj);
 		for (var key in value) {
 			if (value.hasOwnProperty(key)) {
 				if (result.hasOwnProperty(key)) {
-					console.log(result);
 					result[key] = appendInArray(result[key], value[key], {deep_level: deep_level - 1})
 				} else {
 					result[key] = value[key]

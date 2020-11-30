@@ -1,27 +1,88 @@
 .icon-users {
-      display: block;
-      text-indent: -9999px;
-     
-      /* background: url(src/public/users.svg); */
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    .menu-container {
-      line-height: normal;
-    margin-bottom: 20px;
-    background: #17223b;
-    height: 100vh;
-    cursor: pointer;
-    padding: 20px;
-    }
-    .user-card {
-      display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    background: #17223b;
-    text-align: center;
-    border-radius: 10px;
-    overflow: hidden;
-    }
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  margin-right: 8px;
+  background: url(../users.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+.menu-container {
+  line-height: normal;
+  margin-bottom: 20px;
+  background: #17223b;
+  height: 100vh;
+  cursor: pointer;
+  padding: 20px;
+}
+.menu-active {
+  color: #f89f4c;;
+}
+.item-card {
+  width: 100%;
+  padding: 20px;
+  background: #17223b;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 30%;
+  height: auto;
+}
+.item_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+  justify-content: center;
+}
+.page-item {
+  display: inline;
+}
+.page-link {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #15a9ff;
+  background-color: #2d3b59;
+  border: 1px solid #17223b;
+  margin-left: -1px;
+}
+.button {
+  border-radius: 10px;
+  position: relative;
+  background: #243654;
+  background-clip: padding-box;
+  color: #fff;
+  display: inline-block;
+  padding: 15px;
+  overflow: hidden;
+  text-align: center;
+  border: none;
+}
+.comments-container {
+  display: block;
+  background: #243654;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.name {
+  color: #f89f4c;
+}
+.line {
+  border-top: 1px solid #cbcbcb;
+  display: block;
+  margin: 20px 0;
+}
+.comment-level {
+  border-radius: 0;
+  border-left: 3px solid #cbcbcb;
+  display: block;
+}

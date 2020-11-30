@@ -1,21 +1,18 @@
 import '../styles/App.css';
 import React from 'react';
-// import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 /**
- * @param {Function} onClick
+ * @param 
  */
 
-const Menu = ({onClick}) => {
+const Menu = () => {
   return (
-    <div className="left-column">
    <div className="menu-container">
-   <div onClick={onClick}>
-        <i className= 'icon-users'/>
-            Пользователи
-    </div>
+      <NavLink activeClassName='menu-active' to={`/users`}>
+        <i className= 'icon-users'/>Пользователи
+      </NavLink>
    </div>
-    </div>
 	);
 };
 

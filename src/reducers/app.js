@@ -1,7 +1,9 @@
-import databaseReducer from './databaseReducer'
+import { combineReducers } from 'redux'
+import databaseReducer from './databaseReducer';
 
-export default ( state = {}, action ) => {
-	return {
-		database: databaseReducer(state.database, action),
-	};
-}
+const rootReducer = combineReducers({
+    database: databaseReducer,
+})
+
+export default rootReducer;
+
