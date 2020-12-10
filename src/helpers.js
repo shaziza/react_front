@@ -1,3 +1,10 @@
+// @ts-check
+/**
+ * 
+ *
+ * @param {object} obj 
+ * @param {string} path 
+ */
 export const getPathFromObjectByArray = (obj, path) => {
 	let key = path.pop();
 	let result = path.length !== 0 ? getPathFromObjectByArray(obj, path) : obj;
@@ -41,4 +48,10 @@ export const appendInObject = (obj, value, {deep_level} = {}) => {
 	} else {
 		return obj ? Object.assign({}, obj, value) : value;
 	}
+}
+export function makeBEMName(block = '', element = '', modificators = [], extra) {
+	const name = block + (element ? ('__' + element) : '');
+	return name +
+		' ' + modificators.map(i => i ? `${name}--${i}` : '').join(' ')
+		+ (extra ? (' ' + extra) : '');
 }

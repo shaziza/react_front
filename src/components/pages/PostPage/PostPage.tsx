@@ -1,17 +1,18 @@
+import '../../../styles/App.scss'
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {RouteComponentProps} from 'react-router'
 import {
 	getPost,
 	getComments
-} from '../../../actions/actions.js'
+} from '../../../actions/actions'
 import {
 	POST_KEY,
 	COMMENTS_KEY
 } from '../../../actions/keys';
 import {
 	getPathFromObject
-} from '../../../helpers.js';
+} from '../../../helpers';
 import Comments from '../../../components/blocks/Comments';
 
 type TypeState = {

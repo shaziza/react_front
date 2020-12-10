@@ -1,17 +1,18 @@
+import '../../../styles/App.scss'
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {RouteComponentProps} from 'react-router'
 import Pagination from "react-js-pagination"
 import {
 	getPosts
-} from '../../../actions/actions.js'
+} from '../../../actions/actions'
 import {
 	POSTS_KEY,
 	COUNT_PAGES_KEY
 } from '../../../actions/keys';
 import {
 	getPathFromObject
-} from '../../../helpers.js';
+} from '../../../helpers';
 import PostCard from '../../../components/cards/PostCard'
 
 type TypeState = {

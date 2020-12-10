@@ -1,17 +1,17 @@
-import '../styles/App.css';
+import '../../../styles/App.scss'
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import Pagination from "react-js-pagination";
 import {
 	getUsers
-} from '../../../actions/actions.js'
+} from '../../../actions/actions'
 import {
 	USERS_KEY,
 	COUNT_PAGES_KEY
 } from '../../../actions/keys';
 import {
 	getPathFromObject
-} from '../../../helpers.js';
+} from '../../../helpers';
 import UserCard from '../../../components/cards/UserCard'
 
 type TypeState = {

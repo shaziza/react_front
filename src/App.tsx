@@ -1,7 +1,7 @@
-import './styles/index.css';
+import './styles/index.scss'
 import React, {Component} from 'react';
 import {Routes} from './Routes.js'; 
-import Menu from './components/Menu'
+import Menu from './components/modules/Menu'
 
 class App extends Component {
   
