@@ -4,13 +4,7 @@ import {Routes} from './Routes.js';
 import Menu from './components/Menu'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
-  componentDidMount() {
-  }
+  
   render() {
     return (
       <div className="Content">

@@ -1,16 +1,16 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import ListPosts from './components/ListPosts';
-import Common from './components/Common';
-import UsersPage from './components/UsersPage';
-import PostPage from './components/PostPage';
+import PostPage from './components/pages/PostPage';
+import UsersPage from './components/pages/UsersPage';
+import CommonPage from './components/pages/CommonPage';
+import ListPostsPage from './components/pages/ListPostsPage';
 
 export const Routes = (props) => {
 	return (
 		<Switch>
-			<Route exact path='/' component={Common} />
+			<Route exact path='/' component={CommonPage} />
 			<Route exact path='/users' component={UsersPage} />
-			<Route exact path='/users/:id/posts' component={ListPosts} />
+			<Route exact path='/users/:id/posts' component={ListPostsPage} />
 			<Route exact path='/users/:id/post/:postId' component={PostPage} />	
 		</Switch>
 	);
