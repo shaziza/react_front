@@ -1,0 +1,27 @@
+.Menu {
+    &__container {
+        line-height: normal;
+        margin-bottom: 20px;
+        background: #17223b;
+        height: 100vh;
+        cursor: pointer;
+        padding: 20px;
+    }
+    &__item {
+        position: relative;
+        width: 100%; 
+        &--active {
+            color: #f89f4c;;
+        }
+    }
+    &__icon-users {
+        display: inline-block;
+        position: relative;
+        top: 8px;
+        margin-right: 8px;
+        background: url(../../../users.svg);
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+    }
+}

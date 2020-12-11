@@ -11,7 +11,8 @@ import {
 	COMMENTS_KEY
 } from '../../../actions/keys';
 import {
-	getPathFromObject
+	getPathFromObject,
+	BEMName
 } from '../../../helpers';
 import Comments from '../../../components/blocks/Comments';
 
@@ -42,6 +43,8 @@ interface TypeProps extends RouteComponentProps<MatchParams> {
 	history: any,
 	items: string[],
 }
+const c = 'App';
+
 class PostPage extends Component<TypeProps, TypeState> {
 	constructor(props: TypeProps) {
 		super(props);
@@ -54,14 +57,6 @@ class PostPage extends Component<TypeProps, TypeState> {
 		const id = this.props.match.params.id;
 		const post_id = this.props.match.params.postId;
 		this.props.getPost(id, post_id);
-	}
-	componentWillReceiveProps(nextProps: TypeProps) {
-		if (nextProps.location.search === "?comments=true") {
-			setTimeout(() => {
-				if (!this.state.show_comments) this.props.getComments(this.props.post.id);
-				if (this.props.comments) this.setState({show_comments: true});
-			}, 800)
-		}
 	}
 	onClick() {
 		this.props.getComments(this.props.post.id);
@@ -79,7 +74,7 @@ class PostPage extends Component<TypeProps, TypeState> {
 						<p>
 							{this.props.post.body}
 						</p>
-						<button onClick={this.onClick} className='button'>Показать комментарии</button>
+						<button onClick={this.onClick} className={BEMName(c, 'button')}>Показать комментарии</button>
 					</div>
 				) : 'Ничего не найдено'
 				}

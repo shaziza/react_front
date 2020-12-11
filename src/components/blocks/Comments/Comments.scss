@@ -1,0 +1,22 @@
+.Comments {
+    &__container {
+        display: block;
+        background: #243654;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    &__name {
+        color: #f89f4c;
+    }
+    &__line {
+        border-top: 1px solid #cbcbcb;
+        display: block;
+        margin: 20px 0;  
+    }
+    &__level {
+        border-radius: 0;
+        border-left: 3px solid #cbcbcb;
+        display: block;
+    }
+}

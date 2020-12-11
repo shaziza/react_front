@@ -10,7 +10,8 @@ import {
 	COUNT_PAGES_KEY
 } from '../../../actions/keys';
 import {
-	getPathFromObject
+	getPathFromObject,
+	BEMName
 } from '../../../helpers';
 import UserCard from '../../../components/cards/UserCard'
 
@@ -34,6 +35,8 @@ type TypeProps = {
 	history: any,
 	location: any,
 };
+
+const c = 'App';
 
 class UsersPage extends Component<TypeProps, TypeState> {
 	constructor(props: TypeProps) {
@@ -78,7 +81,7 @@ class UsersPage extends Component<TypeProps, TypeState> {
 		const users = this.props.users;
 		return (
 		<Fragment>
-			<div className='item_list'>  
+			<div className={BEMName(c, 'item_list')}>  
 				{users.map((i) => {
 					return (
 						<UserCard 	
@@ -89,7 +92,7 @@ class UsersPage extends Component<TypeProps, TypeState> {
 					);
 				})}
 			</div>
-			<div className='pagination'>
+			<div className={BEMName(c, 'pagination')}>
 				{this.props.pagination.pages > 1 && (
 					<Pagination
 						hideDisabled
@@ -97,8 +100,8 @@ class UsersPage extends Component<TypeProps, TypeState> {
 						itemsCountPerPage={12}
 						totalItemsCount={this.props.pagination.pages}
 						pageRangeDisplayed={10}
-						itemClass='page-item'
-						linkClass='page-link'
+						itemClass={BEMName(c, 'page-item')}
+						linkClass={BEMName(c, 'page-link')}
 						getPageUrl={(i) => `/?page=${i}`}
 						onChange={this.handlePageChange} />
 				)}

@@ -1,0 +1,23 @@
+.UserCard {
+    &__item-card {
+        width: 100%;
+        padding: 20px;
+        background: #17223b;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        width: 30%;
+        height: auto;
+    }
+    &__button {
+        border-radius: 10px;
+        position: relative;
+        background: #243654;
+        background-clip: padding-box;
+        color: #fff;
+        display: inline-block;
+        padding: 15px;
+        overflow: hidden;
+        text-align: center;
+        border: none;
+    }
+}

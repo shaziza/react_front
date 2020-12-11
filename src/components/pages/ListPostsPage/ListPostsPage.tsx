@@ -11,7 +11,8 @@ import {
 	COUNT_PAGES_KEY
 } from '../../../actions/keys';
 import {
-	getPathFromObject
+	getPathFromObject,
+	BEMName
 } from '../../../helpers';
 import PostCard from '../../../components/cards/PostCard'
 
@@ -36,6 +37,9 @@ interface TypeProps extends RouteComponentProps<MatchParams> {
 	getPosts: any,
 	getUsers: any,
 }
+
+const c = 'App';
+
 class ListPostsPage extends Component<TypeProps, TypeState>{
 	constructor(props: TypeProps) {
 		super(props);
@@ -69,7 +73,7 @@ class ListPostsPage extends Component<TypeProps, TypeState>{
 		const posts = this.props.posts;
 		return posts.length > 0 ? (
 		<Fragment>
-			<div className='item_list'>  
+			<div className={BEMName(c, 'butitem_listton')}>  
 				{posts.map((i) => {
 					return (
 						<PostCard 	
@@ -80,7 +84,7 @@ class ListPostsPage extends Component<TypeProps, TypeState>{
 					);
 				})}
 			</div>
-			<div className='pagination'>
+			<div className={BEMName(c, 'pagination')}>
 				{this.props.pagination.pages > 1 && (
 					<Pagination
 						hideDisabled
@@ -88,8 +92,8 @@ class ListPostsPage extends Component<TypeProps, TypeState>{
 						itemsCountPerPage={12}
 						totalItemsCount={this.props.pagination && this.props.pagination.pages}
 						pageRangeDisplayed={10}
-						itemClass='page-item'
-						linkClass='page-link'
+						itemClass={BEMName(c, 'page-item')}
+						linkClass={BEMName(c, 'page-link')}
 						getPageUrl={(i) => `/?page=${i}`}
 						onChange={this.handlePageChange} />
 				)}

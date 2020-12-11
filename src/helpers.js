@@ -49,7 +49,7 @@ export const appendInObject = (obj, value, {deep_level} = {}) => {
 		return obj ? Object.assign({}, obj, value) : value;
 	}
 }
-export function makeBEMName(block = '', element = '', modificators = [], extra) {
+export function BEMName(block = '', element = '', modificators = [], extra) {
 	const name = block + (element ? ('__' + element) : '');
 	return name +
 		' ' + modificators.map(i => i ? `${name}--${i}` : '').join(' ')
