@@ -85,7 +85,7 @@ class UsersPage extends Component<TypeProps, TypeState> {
 				{users.map((i) => {
 					return (
 						<UserCard 	
-							key={i.id} 
+							key={ i.id } 
 							params={i} 
 							onSelect={() => this.onSelect(i.id)} 
 							isSelected={this.state.selected[i.id]} />
